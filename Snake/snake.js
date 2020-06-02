@@ -34,29 +34,22 @@ this.update = function(){
 }
 this.changeDirection = function(direction){
 	
-	switch(direction){
+	switch(direction)
+	{
 	case 'Up':
-	this.xSpeed = 0;
-	this.ySpeed = -scale*1;
-	
-	}
-	switch(direction){
+	 this.xSpeed = 0;
+	 this.ySpeed = -scale*1;
+         break;
 	case 'Down':
-	this.xSpeed = 0;
-	this.ySpeed = scale*1;
-	
-	}
-	switch(direction){
+	 this.xSpeed = 0;
+	 this.ySpeed = scale*1;
+	 break;
 	case 'Right':
-	this.xSpeed = scale*1;
-	this.ySpeed = 0;
-	
-	}
-	switch(direction){
+	 this.xSpeed = scale*1;
+	 this.ySpeed = 0;
 	case 'Left':
-	this.xSpeed = -scale*1;
-	this.ySpeed = 0;
-	
+	 this.xSpeed = -scale*1;
+	 this.ySpeed = 0;
 	}
 	
 }
