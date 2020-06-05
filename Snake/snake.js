@@ -3,13 +3,25 @@ this.x = 0;
 this.y = 0;
 this.xSpeed = scale*1;
 this.ySpeed = 0;
+this.food = 0;
+this.tail = [];
 
 this.draw = function() {
-	ctx.fillStyle = "FFFFFF";
+	ctx.fillStyle = "#FFFFFF";
+	
+	for (let i=0; i<this.tail.length; i++){
+	ctx.fillRect(this.tail[i].x, this.tail[i].y, scale, scale);
+}
+
 	ctx.fillRect(this.x, this.y, scale, scale);
 }
 
-this.update = function(){
+this.update = function() {
+    for (let i=0; i<this.tail.length - 1; i++) {
+      this.tail[i] = this.tail[i+1];
+    }
+	
+	this.tail[this.food - 1] = {x: this.x, y: this.y};
 	
     ctx.clearRect(0, 0 , canvas.width, canvas.height);
 	this.x +=this.xSpeed;
@@ -47,10 +59,22 @@ this.changeDirection = function(direction){
 	case 'Right':
 	 this.xSpeed = scale*1;
 	 this.ySpeed = 0;
+	  break;
 	case 'Left':
 	 this.xSpeed = -scale*1;
 	 this.ySpeed = 0;
 	}
 	
 }
+  this.eats = function(fruit) {
+    if (this.x === fruit.x &&
+      this.y === fruit.y) {
+      this.food++;
+      return true;
+    }
+
+    return false;
+  }
+
+	
 }
