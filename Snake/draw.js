@@ -24,6 +24,9 @@ var snake;
 		if (snake.eats(fruit)){
 			fruit.pickLocation();
 		}
+		
+		snake.checkCollision();
+		
 	}, 250);
 }());
 

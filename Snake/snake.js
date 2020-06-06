@@ -76,5 +76,16 @@ this.changeDirection = function(direction){
     return false;
   }
 
+this.checkCollision = function(){
 	
+	for(var i=0; i<this.tail.length; i++){
+		
+	 if (this.x === this.tail[i].x &&
+      this.y === this.tail[i].y) {
+      this.food = 0;
+	  this.tail = [];
+	  
+      }	
+	}
+  }
 }
