@@ -26,6 +26,7 @@ var snake;
 		}
 		
 		snake.checkCollision();
+		fruit.foodCollision()
 		
 	}, 250);
 }());
