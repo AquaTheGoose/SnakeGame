@@ -9,13 +9,12 @@ var snake;
 
 
 (function setup() {
-	fruit = new Fruit();
+	
 	snake = new Snake();
+	fruit = new Fruit(snake);
 	fruit.pickLocation();
 	
-	
-	
-	window.setInterval(() => {
+		window.setInterval(() => {
 		ctx.clearRect (0, 0, canvas.width, canvas.height);
 		snake.update();
 		fruit.draw();
@@ -23,10 +22,9 @@ var snake;
 		
 		if (snake.eats(fruit)){
 			fruit.pickLocation();
-		}
-		
-		snake.checkCollision();
+			snake.checkCollision();
 		fruit.foodCollision()
+		}
 		
 	}, 250);
 }());
