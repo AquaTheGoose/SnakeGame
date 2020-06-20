@@ -22,9 +22,14 @@ var snake;
 		
 		if (snake.eats(fruit)){
 			fruit.pickLocation();
-			snake.checkCollision();
-		fruit.foodCollision()
+			
 		}
+			snake.checkCollision();
+		fruit.foodCollision();
+		
+		
+		document.querySelector('.score')
+		.innerText = snake.food;
 		
 	}, 250);
 }());
